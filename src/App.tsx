@@ -5,6 +5,7 @@ import {Body} from "./sait/components/Body";
 import {Footer} from "./sait/components/Footer";
 import {NewComponent} from "./sait/components/NewComponent";
 import {Car} from "./sait/components/Car";
+import {Button} from "./sait/components/Button";
 
 function App() {
 
@@ -22,12 +23,26 @@ function App() {
         {id: 11, name: "Christopher", age: 100},
     ]
 
+
+    const Button1Foo = (subscriber: string, age: number) => {
+        console.log(subscriber, age)
+    }
+    const Button2Foo = (subscriber: string) => {
+        console.log(subscriber)
+    }
+    const Button3Foo = () => {
+        console.log("Im stupid Button")
+    }
+
     return (
         <>
             <Header title="header"/>
             <Body title="body"/>
             <NewComponent students={students}/>
             <Car/>
+            <Button name="chanel1" callBack={() => Button1Foo("Im Vasya", 21)}/>
+            <Button name="chanel2" callBack={() => Button2Foo("Im Ivan")}/>
+            <Button name="chanel3" callBack={Button3Foo}/>
             <Footer title="footer"/>
         </>
     );
